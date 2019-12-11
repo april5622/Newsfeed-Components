@@ -115,23 +115,6 @@ const data = [
 
 const articles= document.querySelector('.articles');
 
-
-  data.forEach((content) =>{
-    console.log('from forEach loop', content);
-    articles.appendChild(articleCreator(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
-  });
-
-/* let articleArray = data.map((items) => {
-  let content = articleCreator(items);
-
-  return content;
-});
- */
-
-/* articleArray.forEach(content =>{
-  articles.appendChild(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph);
-}); */
-
 function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph){
   const articleDiv = document.createElement('div');
   const articleTitle = document.createElement('h2');
@@ -139,30 +122,30 @@ function articleCreator(title, date, firstParagraph, secondParagraph, thirdParag
   const firstContent = document.createElement('p');
   const secondContent = document.createElement('p');
   const thirdContent = document.createElement('p');
-  const expandButton = document.createElement('span');
+  const button = document.createElement('span');
 
   articleDiv.appendChild(articleTitle);
   articleDiv.appendChild(articleDate);
   articleDiv.appendChild(firstContent);
   articleDiv.appendChild(secondContent);
   articleDiv.appendChild(thirdContent);
-  articleDiv.appendChild(expandButton);
+  articleDiv.appendChild(button);
 
   articleDiv.classList.add('article');
   articleDate.classList.add('date');
-  expandButton.classList.add('expandButton');
+  button.classList.add('expandButton');
 
   articleTitle.textContent = title;
   articleDate.textContent = date;
   firstContent.textContent = firstParagraph;
   secondContent.textContent = secondParagraph;
   thirdContent.textContent = thirdParagraph;
-  //expandButton.textContent = "open";
+  button.textContent = "open";
 
 
 
   articleDiv.addEventListener('click', (e) => {
-    expandButton.classList.toggle('article-open');
+    button.classList.toggle('article-open');
     //expandButton.classList.toggle('close');
   });
 
@@ -170,3 +153,12 @@ function articleCreator(title, date, firstParagraph, secondParagraph, thirdParag
   
 };
 
+data.map((content) => {
+  return articles.appendChild(articleCreator(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
+});
+
+/* data.forEach((content) =>{
+  console.log('from forEach loop', content);
+  articles.appendChild(articleCreator(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
+});
+ */

@@ -71,7 +71,7 @@ function meunCreator(array){
   const menuButtons = document.querySelector('.menu-button');
 
   menuButtons.addEventListener('click', (e) => {
-    menuDiv.classList.toggle('.menu--open');
+    menuDiv.classList.toggle('menu--open');
   });
 
 
