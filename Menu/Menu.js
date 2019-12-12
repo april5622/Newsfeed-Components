@@ -43,41 +43,21 @@ function meunCreator(array){
       list.appendChild(itemList);
       itemList.textContent = item;
     });
-  /* const itemOne = document.createElement('li');
-  const itemTwo = document.createElement('li');
-  const itemThree = document.createElement('li');
-  const itemFour = document.createElement('li');
-  const itemFive = document.createElement('li');
-  const itemSix = document.createElement('li'); */
 
   menuDiv.appendChild(list);
-  /* list.appendChild(itemOne);
-  list.appendChild(itemTwo);
-  list.appendChild(itemThree);
-  list.appendChild(itemFour);
-  list.appendChild(itemFive);
-  list.appendChild(itemSix); */
-
-  /* itemOne.textContent = menuItems[0];
-  itemTwo.textContent = menuItems[1];
-  itemThree.textContent = menuItems[2];
-  itemFour.textContent = menuItems[3];
-  itemFive.textContent = menuItems[4];
-  itemSix.textContent = menuItems[5]; */
 
   menuDiv.classList.add('menu');
 
-  const menuButtons = document.querySelector('.menu-button');
+  const menuButton = document.querySelector('.menu-button');
 
-  menuButtons.addEventListener('click', (e) => {
+  menuButton.addEventListener('click', (e) => {
     menuDiv.classList.toggle('menu--open');
   });
-
 
 return menuDiv;
 
 };
 
-const menuButtons = document.querySelector('.menu-button');
-menuButtons.appendChild(meunCreator(menuItems));
+const menuButton = document.querySelector('.header');
+menuButton.appendChild(meunCreator(menuItems));
 
