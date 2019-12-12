@@ -35,7 +35,6 @@ let menuItems = [
 */
 
 
-
 function meunCreator(array){
   const menuDiv = document.createElement('div');
   const list = document.createElement('ul');

@@ -142,10 +142,8 @@ function articleCreator(title, date, firstParagraph, secondParagraph, thirdParag
   thirdContent.textContent = thirdParagraph;
   button.textContent = "open";
 
-
-
   articleDiv.addEventListener('click', (e) => {
-    button.classList.toggle('article-open');
+    articleDiv.classList.toggle('article-open');
     //expandButton.classList.toggle('close');
   });
 
