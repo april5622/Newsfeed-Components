@@ -112,3 +112,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articles= document.querySelector('.articles');
+
+function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const articleDiv = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const firstContent = document.createElement('p');
+  const secondContent = document.createElement('p');
+  const thirdContent = document.createElement('p');
+  const button = document.createElement('span');
+
+  articleDiv.appendChild(articleTitle);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(firstContent);
+  articleDiv.appendChild(secondContent);
+  articleDiv.appendChild(thirdContent);
+  articleDiv.appendChild(button);
+
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  button.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  firstContent.textContent = firstParagraph;
+  secondContent.textContent = secondParagraph;
+  thirdContent.textContent = thirdParagraph;
+  button.textContent = "open";
+
+  articleDiv.addEventListener('click', (e) => {
+    articleDiv.classList.toggle('article-open');
+    //expandButton.classList.toggle('close');
+  });
+
+  return articleDiv;
+  
+};
+
+data.map((content) => {
+  return articles.appendChild(articleCreator(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
+});
+
+/* data.forEach((content) =>{
+  console.log('from forEach loop', content);
+  articles.appendChild(articleCreator(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
+});
+ */
